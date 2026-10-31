@@ -22,6 +22,7 @@
             <nav class="flex items-center gap-6 text-sm uppercase tracking-widest">
                 <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-red-500' : 'hover:text-red-500' }} transition">Home</a>
                 <a href="{{ route('orders.create') }}" class="{{ request()->routeIs('orders.*') ? 'text-red-500' : 'hover:text-red-500' }} transition">Order</a>
+                <a href="{{ route('culture') }}" class="{{ request()->routeIs('culture') ? 'text-red-500' : 'hover:text-red-500' }} transition">Culture</a>
             </nav>
         </div>
     </header>

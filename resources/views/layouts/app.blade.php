@@ -23,6 +23,7 @@
                 <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-red-500' : 'hover:text-red-500' }} transition">Home</a>
                 <a href="{{ route('orders.create') }}" class="{{ request()->routeIs('orders.*') ? 'text-red-500' : 'hover:text-red-500' }} transition">Order</a>
                 <a href="{{ route('culture') }}" class="{{ request()->routeIs('culture') ? 'text-red-500' : 'hover:text-red-500' }} transition">Culture</a>
+                <a href="{{ route('parts') }}" class="{{ request()->routeIs('parts') ? 'text-red-500' : 'hover:text-red-500' }} transition">Parts</a>
             </nav>
         </div>
     </header>

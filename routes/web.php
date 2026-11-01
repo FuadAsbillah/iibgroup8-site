@@ -11,5 +11,9 @@ Route::get('/culture', function () {
     return view('culture');
 })->name('culture');
 
+Route::get('/parts', function () {
+    return view('parts');
+})->name('parts');
+
 Route::get('/order', [OrderController::class, 'create'])->name('orders.create');
 Route::post('/order', [OrderController::class, 'store'])->name('orders.store');

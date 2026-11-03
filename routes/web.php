@@ -17,3 +17,4 @@ Route::get('/parts', function () {
 
 Route::get('/order', [OrderController::class, 'create'])->name('orders.create');
 Route::post('/order', [OrderController::class, 'store'])->name('orders.store');
+Route::view('/gallery', 'gallery')->name('gallery');

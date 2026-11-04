@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\JoinApplication;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class JoinController extends Controller
 {
@@ -12,7 +13,7 @@ class JoinController extends Controller
         return view('join');
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -24,9 +25,11 @@ class JoinController extends Controller
 
         JoinApplication::create($validated);
 
-        return redirect('/join')->with(
+        $request->session()->flash(
             'success',
             'Your membership application has been submitted successfully!'
         );
+
+        return new RedirectResponse('/join', 303);
     }
 }

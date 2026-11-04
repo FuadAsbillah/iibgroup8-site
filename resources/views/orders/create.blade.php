@@ -15,35 +15,49 @@
                 </div>
             @endif
 
+            @if ($errors->any())
+                <div class="mb-8 rounded-xl border border-red-500/40 bg-red-500/10 px-5 py-4 text-red-300">
+                    Please check the form for errors and try again.
+                </div>
+            @endif
+
             <div class="grid md:grid-cols-3 gap-8 mb-16">
-                @foreach ($cars as $car)
+                @forelse ($cars as $car)
                     <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex flex-col transition hover:-translate-y-1 hover:shadow-xl hover:shadow-red-600/10">
                         <div class="text-red-500 text-xs uppercase tracking-widest mb-2">{{ $car->tagline }}</div>
                         <h2 class="font-display text-xl mb-4">{{ $car->name }}</h2>
                         <p class="text-2xl mb-6 mt-auto">BND {{ number_format((float) $car->price, 2) }}</p>
+
                         <button type="button" data-car-id="{{ $car->id }}" class="select-car bg-red-600 hover:bg-red-700 px-5 py-3 rounded text-sm uppercase tracking-widest font-semibold transition">
                             Order this car
                         </button>
                     </div>
-                @endforeach
+                @empty
+                    <p class="text-gray-400">No cars are currently available.</p>
+                @endforelse
             </div>
 
             <div id="order-form" class="max-w-2xl bg-zinc-900 border border-zinc-800 rounded-xl p-8">
                 <h2 class="font-display text-2xl mb-6">Order form</h2>
 
-                <form method="POST" action="{{ route('orders.store') }}" class="space-y-5">
+                <form method="POST" action="/order" class="space-y-5">
                     @csrf
 
                     <div>
-                        <label for="car_id" class="block text-sm uppercase tracking-widest text-gray-400 mb-2">Car</label>
-                        <select id="car_id" name="car_id" class="w-full bg-black border border-zinc-700 rounded px-4 py-3 focus:border-red-500 focus:outline-none">
-                            <option value="">Choose a car</option>
+                        <label for="car_id" class="block text-sm uppercase tracking-widest text-gray-400 mb-2">Choose your car</label>
+
+                        <select id="car_id" name="car_id" required class="w-full bg-black border border-zinc-700 rounded px-4 py-3 focus:border-red-500 focus:outline-none">
+                            <option value="" disabled @selected(old('car_id') === null)>Choose a car</option>
+
                             @foreach ($cars as $car)
-                                <option value="{{ $car->id }}" data-price="{{ $car->price }}" @selected(old('car_id') == $car->id)>
+                                <option value="{{ $car->id }}"
+                                    data-price="{{ $car->price }}"
+                                    @selected(old('car_id') == $car->id)>
                                     {{ $car->name }} — BND {{ number_format((float) $car->price, 2) }}
                                 </option>
                             @endforeach
                         </select>
+
                         @error('car_id')
                             <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
                         @enderror
@@ -51,7 +65,7 @@
 
                     <div>
                         <label for="customer_name" class="block text-sm uppercase tracking-widest text-gray-400 mb-2">Your name</label>
-                        <input id="customer_name" name="customer_name" type="text" value="{{ old('customer_name') }}" class="w-full bg-black border border-zinc-700 rounded px-4 py-3 focus:border-red-500 focus:outline-none">
+                        <input id="customer_name" name="customer_name" type="text" required value="{{ old('customer_name') }}" class="w-full bg-black border border-zinc-700 rounded px-4 py-3 focus:border-red-500 focus:outline-none">
                         @error('customer_name')
                             <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
                         @enderror
@@ -59,7 +73,7 @@
 
                     <div>
                         <label for="customer_email" class="block text-sm uppercase tracking-widest text-gray-400 mb-2">Email</label>
-                        <input id="customer_email" name="customer_email" type="email" value="{{ old('customer_email') }}" class="w-full bg-black border border-zinc-700 rounded px-4 py-3 focus:border-red-500 focus:outline-none">
+                        <input id="customer_email" name="customer_email" type="email" required value="{{ old('customer_email') }}" class="w-full bg-black border border-zinc-700 rounded px-4 py-3 focus:border-red-500 focus:outline-none">
                         @error('customer_email')
                             <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
                         @enderror
@@ -67,7 +81,7 @@
 
                     <div>
                         <label for="quantity" class="block text-sm uppercase tracking-widest text-gray-400 mb-2">Quantity (1–10)</label>
-                        <input id="quantity" name="quantity" type="number" min="1" max="10" value="{{ old('quantity', 1) }}" class="w-full bg-black border border-zinc-700 rounded px-4 py-3 focus:border-red-500 focus:outline-none">
+                        <input id="quantity" name="quantity" type="number" min="1" max="10" required value="{{ old('quantity', 1) }}" class="w-full bg-black border border-zinc-700 rounded px-4 py-3 focus:border-red-500 focus:outline-none">
                         @error('quantity')
                             <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
                         @enderror
@@ -102,9 +116,8 @@
             const price = parseFloat(carSelect.selectedOptions[0]?.dataset.price ?? 0);
             const quantity = parseInt(quantityInput.value || '1', 10);
 
-            if (!price || Number.isNaN(quantity)) {
+            if (!price || Number.isNaN(quantity) || quantity < 1) {
                 estimate.textContent = '';
-
                 return;
             }
 
@@ -124,6 +137,7 @@
 
         carSelect.addEventListener('change', updateEstimate);
         quantityInput.addEventListener('input', updateEstimate);
+
         updateEstimate();
     </script>
 @endpush

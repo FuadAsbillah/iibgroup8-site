@@ -16,6 +16,7 @@ class OrderController extends Controller
     {
         return view('orders.create', [
             'cars' => Car::query()->orderBy('price')->get(),
+            'appUrl' => config('app.url'),
         ]);
     }
 
@@ -35,8 +36,11 @@ class OrderController extends Controller
             'notes' => $data['notes'] ?? null,
         ]);
 
-        return redirect()
-            ->route('orders.create')
-            ->with('success', "Order #{$order->id} received. We'll contact you at {$order->customer_email} shortly.");
+        $request->session()->flash(
+            'success',
+            "Order #{$order->id} received. We'll contact you at {$order->customer_email} shortly."
+        );
+
+        return new RedirectResponse('/order', 303);
     }
 }

@@ -1,4 +1,3 @@
-```php
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -19,18 +18,20 @@
 <body class="font-body bg-black text-white antialiased">
     <header class="fixed top-0 inset-x-0 z-50 bg-black/70 backdrop-blur border-b border-red-600/30">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="{{ url('/') }}" class="font-display font-black text-2xl tracking-widest text-red-500">JDM<span class="text-white">ZONE</span></a>
+            <a href="/" class="font-display font-black text-2xl tracking-widest text-red-500">JDM<span class="text-white">ZONE</span></a>
 
             <nav class="flex items-center gap-6 text-sm uppercase tracking-widest">
-                <a href="{{ url('/') }}" class="{{ request()->routeIs('home') ? 'text-red-500' : 'hover:text-red-500' }} transition">Home</a>
+                <a href="/" class="hover:text-red-500 transition">Home</a>
 
-                <a href="{{ url('/order') }}" class="{{ request()->routeIs('orders.*') ? 'text-red-500' : 'hover:text-red-500' }} transition">Order</a>
+                <a href="/order" class="hover:text-red-500 transition">Order</a>
 
-                <a href="{{ url('/culture') }}" class="{{ request()->routeIs('culture') ? 'text-red-500' : 'hover:text-red-500' }} transition">Culture</a>
+                <a href="/culture" class="hover:text-red-500 transition">Culture</a>
 
-                <a href="{{ url('/parts') }}" class="{{ request()->routeIs('parts') ? 'text-red-500' : 'hover:text-red-500' }} transition">Parts</a>
+                <a href="/parts" class="hover:text-red-500 transition">Parts</a>
 
-                <a href="{{ url('/gallery') }}" class="{{ request()->routeIs('gallery') ? 'text-red-500' : 'hover:text-red-500' }} transition">Gallery</a>
+                <a href="/gallery" class="hover:text-red-500 transition">Gallery</a>
+
+                <a href="/join" class="hover:text-red-500 transition">Join Us</a>
             </nav>
         </div>
     </header>
@@ -46,4 +47,3 @@
     @stack('scripts')
 </body>
 </html>
-```

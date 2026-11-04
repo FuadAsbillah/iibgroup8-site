@@ -1,58 +1,54 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# iibgroup8-site (DS1202 AS03 Group Project)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Team Members & Roles
+* Member 1 (Repository Owner): Fuad - Developed the Homepage and Order page
+* Member 2: Amzar - Developed the Culture page and Parts page
+* Member 3: Amreen - Developed the Gallery page and Join Us page
+---
+# About the website
+JDM Zone is a fan site for Japanese Domestic Market car culture. A dark, red-accented "street/tuning" aesthetic aimed at enthusiasts who like Skylines, Supras, drifting, and aftermarket builds.
+* Pages included: Homepage, Order, Culture, Parts, Gallery, and Join Us.
+---
+# How to clone and run it locally with Laravel Herd
+1. Clone the repository into your local Laravel Herd directory
+   ```bash
+   git clone https://github.com/FuadAsbillah/iibgroup8-site.git
 
-## About Laravel
+2. Open Laravel Herd and ensure the project path is linked. Herd will automatically serve it at
+   ``` bash
+   https://iibgroup8.test
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. Open your browser and navigate to https://iibgroup8.test to verify the green SSL padlock icon.
+---
+# Git Workflow Used
+Our team adhered to a strict feature-branch workflow with a protected main branch:
+* No direct commits were made to main.
+* All changes were developed on feature-branches (e.g., feature/homepage, feature/order-page).
+* Every changes was merged through reviewed and approved Pull Requests (PRs).
+---
+# Merge Conflict Resolution
+While our team did not encounter a live merge conflict during this project, we understand the proper Git procedure to resolve one if it were to occur:
+1. Identify the Conflict: If two team members edit the the exact same line of code on separate branches, attempting to merge the second branch into `main` will result in a conflict prompt from GitHub.
+2. Pull Latest Changes: Switch to your local `main` branch, pull the latest updates, switch back to your feature branch, and merge `main` into it:
+   ``` bash
+   git switch main
+   git pull origin main
+   git switch feature/your-branch
+   git merge main
+3. Resolve in Code Editor: Open the conflicting file in your editor (like Visual Studio Code). Git will insert conflict markers (<<<<<<<, =======, >>>>>>>). Manually edit the file to keep the correct code and delete the markers.
+4. Complete the Merge: Stage the resolved file, commit the changes, and push them to complete the merge:
+   ``` bash
+   git add .
+   git commit -m "Resolve merge conflict"
+   git push origin feature/your-branch
+---
+# Merged Pull Requests Links 
+* Link to PR #1: https://github.com/FuadAsbillah/iibgroup8-site/pull/1
+* Link to PR #2: https://github.com/FuadAsbillah/iibgroup8-site/pull/2
+* Link to PR #3: https://github.com/FuadAsbillah/iibgroup8-site/pull/3
+* Link to PR #4: https://github.com/FuadAsbillah/iibgroup8-site/pull/4
+* Link to PR #5: https://github.com/FuadAsbillah/iibgroup8-site/pull/5
+* Link to PR #6: https://github.com/FuadAsbillah/iibgroup8-site/pull/6
+* Link to PR #7: https://github.com/FuadAsbillah/iibgroup8-site/pull/7
+* Link to PR #8: https://github.com/FuadAsbillah/iibgroup8-site/pull/8
+* Link to PR #9: https://github.com/FuadAsbillah/iibgroup8-site/pull/9

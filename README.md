@@ -57,3 +57,6 @@ While our team did not encounter a live merge conflict during this project, we u
 * Fuad: I contributed on making the homepage and order page of our website. What I learned from Git collaboration is that it makes project work easier in a more organized manner. It also helps us learn to work on projects in a professional way.
 
 * Amreen: I contributed by making the Gallery and Join Us pages and fixing bugs on our website. What I learned from GitHub collaboration is that it makes project work easier and more organised. It also taught me how to resolve merge conflicts and work as a team.
+
+* Amzar: I was responsible for developing the Culture and Parts pages for our JDM website. Through this project, I gained experience using Laravel and GitHub to develop and manage my work. One challenge was making sure my pages matched the existing website design without affecting other members' work. Overall, I improved my understanding of version control, collaboration and teamwork.
+

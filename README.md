@@ -52,3 +52,6 @@ While our team did not encounter a live merge conflict during this project, we u
 * Link to PR #7: https://github.com/FuadAsbillah/iibgroup8-site/pull/7
 * Link to PR #8: https://github.com/FuadAsbillah/iibgroup8-site/pull/8
 * Link to PR #9: https://github.com/FuadAsbillah/iibgroup8-site/pull/9
+
+# Individual Reflection
+* Fuad: I contributed on making the homepage and order page of our website. What I learned from Git collaboration is that it makes project work easier in a more organized manner. It also helps us learn to work on projects in a professional way.

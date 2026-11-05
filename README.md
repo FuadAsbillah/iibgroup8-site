@@ -55,3 +55,5 @@ While our team did not encounter a live merge conflict during this project, we u
 
 # Individual Reflection
 * Fuad: I contributed on making the homepage and order page of our website. What I learned from Git collaboration is that it makes project work easier in a more organized manner. It also helps us learn to work on projects in a professional way.
+
+* Amreen: I contributed by developing the Gallery and Join Us pages of our website. Through using GitHub, I learned how to manage branches, commit and push changes, and collaborate with my teammates. I also gained experience in resolving merge conflicts by comparing changes between branches and making sure everything was properly synchronised. GitHub made the development process more organised and helped me understand how developers work together on real-world projects.

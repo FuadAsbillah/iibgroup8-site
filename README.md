@@ -54,7 +54,7 @@ While our team did not encounter a live merge conflict during this project, we u
 * Link to PR #9: https://github.com/FuadAsbillah/iibgroup8-site/pull/9
 
 # Individual Reflection
-* Fuad: I contributed on making the homepage and order page of our website. What I learned from Git collaboration is that it makes project work easier in a more organized manner. It also helps us learn to work on projects in a professional way.
+* Fuad: I contributed on making the homepage and order page of our website. What I learned from Git collaboration is that it makes project work easier in a more organized manner. It also helps us learn to work on projects in a professional way. Furthermore, I understand why enforcing a feature-branch workflow and utilizing Pull Requests is important to keep the codebase clean. By communicating clearly and testing our local setups, I managed to do this project without facing any major problems.
 
 * Amreen: I contributed by making the Gallery and Join Us pages and fixing bugs on our website. What I learned from GitHub collaboration is that it makes project work easier and more organised. It also taught me how to resolve merge conflicts and work as a team.
 
